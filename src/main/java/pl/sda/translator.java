@@ -1,5 +1,5 @@
 package pl.sda;
 
-public interface Translator {
+public interface translator {
     String translate(String textToTranslate);
 }

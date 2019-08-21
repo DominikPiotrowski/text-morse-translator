@@ -3,8 +3,6 @@ package pl.sda;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class MorseToTextTranslatorTest {
 
     @Test
@@ -13,7 +11,7 @@ public class MorseToTextTranslatorTest {
         //given
         final String given = "-.../-.../-.-.";
         final String expected = "bbc";
-        Translator translator = new MorseToTextTranslator();
+        translator translator = new morseToTextTranslator();
 
         //when
         String actual = translator.translate(given);

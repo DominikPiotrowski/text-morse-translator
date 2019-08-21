@@ -2,7 +2,7 @@ package pl.sda;
 
 import java.util.Map;
 
-public class TextToMorseTranslator implements Translator {
+public class textToMorseTranslator implements translator {
 
     @Override
     public String translate(String textToTranslate) {
@@ -27,7 +27,6 @@ public class TextToMorseTranslator implements Translator {
         for (int i = 0; i < textToTranslate.length(); i++) {
 
         //rozbija na litery i zmienia w małe litery
-
             Character character = textToTranslate.toCharArray()[i];
             String charToTranslate = character.toString().toLowerCase();
             stringBuilder.append(mappings.get(charToTranslate));
@@ -40,11 +39,10 @@ public class TextToMorseTranslator implements Translator {
         return stringBuilder.toString();
     }
 
-    //metoda odczytuje mapę i zwraca Mapę<String,String>
+    //odczytuje mapę i zwraca Mapę<String,String>
 
     private Map<String, String> createMappings() {
-
-        MappingFileReader mappingFileReader = new MappingFileReader();
+        mappingFileReader mappingFileReader = new mappingFileReader();
         Map<String, String> mappings = mappingFileReader.readMappingFile();
         return mappings;
     }

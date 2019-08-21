@@ -4,11 +4,11 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MappingFileREaderMorseToTxt {
+public class mappingFileReader {
 
-    public Map<String, String> readMappingFileMorseToTxt() {
+    public Map<String, String> readMappingFile() {
 
-        File file = new File("path to \\morseMappings");
+        File file = new File("path to ...\\morseMappings");
         Map<String, String> mappings = new HashMap<>();
 
         try {
@@ -18,11 +18,11 @@ public class MappingFileREaderMorseToTxt {
 
             while ((line = bufferedReader.readLine()) != null) {
                 String[] tokens = line.split(":");
-                mappings.put(tokens[1], tokens[0].toLowerCase() );
+                mappings.put(tokens[0].toLowerCase(), tokens[1]);
             }
 
         } catch (FileNotFoundException e) {
-            throw new MappingFileNotFoundException();
+            throw new mappingFileNotFoundException();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -30,4 +30,3 @@ public class MappingFileREaderMorseToTxt {
         return mappings;
     }
 }
-

@@ -2,7 +2,7 @@ package pl.sda;
 
 import java.util.Map;
 
-public class MorseToTextTranslator implements Translator {
+public class morseToTextTranslator implements translator {
 
     @Override
     public String translate(String morseToTranslate) {
@@ -34,7 +34,7 @@ public class MorseToTextTranslator implements Translator {
     }
 
     private Map<String, String> createMappings() {
-        MappingFileREaderMorseToTxt mappingFileReader = new MappingFileREaderMorseToTxt();
+        mappingFileREaderMorseToTxt mappingFileReader = new mappingFileREaderMorseToTxt();
         Map<String, String> mappings = mappingFileReader.readMappingFileMorseToTxt();
         return mappings;
     }
