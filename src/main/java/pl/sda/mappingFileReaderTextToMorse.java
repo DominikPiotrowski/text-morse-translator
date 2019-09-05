@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class mappingFileReader {
+public class mappingFileReaderTextToMorse {
 
     public Map<String, String> readMappingFile() {
 

@@ -7,7 +7,7 @@ public class textToMorseTranslator implements translator {
     @Override
     public String translate(String textToTranslate) {
 
-        //mapa - słownik , nowa mapa na słowa trim i stringBulider
+        //słownik , nowa mapa na słowa trim i stringBulider
 
         Map<String, String> mappings = createMappings();
         String[] words = textToTranslate.split(" ");
@@ -42,8 +42,8 @@ public class textToMorseTranslator implements translator {
     //odczytuje mapę i zwraca Mapę<String,String>
 
     private Map<String, String> createMappings() {
-        mappingFileReader mappingFileReader = new mappingFileReader();
-        Map<String, String> mappings = mappingFileReader.readMappingFile();
+        mappingFileReaderTextToMorse mappingFileReaderTextToMorse = new mappingFileReaderTextToMorse();
+        Map<String, String> mappings = mappingFileReaderTextToMorse.readMappingFile();
         return mappings;
     }
 }
